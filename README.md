@@ -2,6 +2,12 @@
 
 A Flask-based web application that connects the Spotify API with Verizon messaging workflows. The app allows a user to search for artists, view top tracks, preview music, and send a selected artist's top songs to a friend through a Verizon-integrated messaging flow.
 
+## Visual Preview
+
+![Spotify-Verizon home flow](docs/screenshots/home-preview.png)
+
+![Spotify-Verizon top tracks flow](docs/screenshots/tracks-preview.png)
+
 ## What This Project Does
 
 The application is built around a simple user journey:
@@ -38,6 +44,7 @@ This makes the project a good example of API orchestration across two different 
 - `index.html`, `search_results.html`, `top_tracks.html`, `devices.html`, `success.html`, `error.html`: UI templates
 - `.env.example`: sample environment configuration
 - `18.04.2025_21.41.52_REC.mp4`: local demo recording preserved in the repository
+- `docs/screenshots/`: README preview images for the main user flow
 
 ## Setup
 
@@ -96,6 +103,11 @@ SIMULATE_VERIZON_SUCCESS=true
 ```
 
 This helps validate the end-to-end user flow during development.
+
+## Demo Asset
+
+- Local walkthrough recording preserved in the repo:
+  - `18.04.2025_21.41.52_REC.mp4`
 
 ## Why This Project Matters
 

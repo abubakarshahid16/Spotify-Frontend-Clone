@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify-Verizon Tracks Preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #102033;
+      padding: 30px 24px;
+    }
+    h1 { margin: 0 0 8px; font-size: 40px; }
+    .lead { margin: 0 0 22px; color: #516175; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+    .btn {
+      background: #cd040b;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .track {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 14px 32px rgba(16, 32, 51, 0.1);
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      overflow: hidden;
+    }
+    .cover {
+      background: linear-gradient(140deg, #1db954, #1a73e8);
+      min-height: 150px;
+      position: relative;
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.18);
+    }
+    .meta {
+      padding: 18px 18px 16px;
+    }
+    .meta h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .meta p {
+      margin: 0 0 10px;
+      color: #5b6b80;
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .audio {
+      height: 38px;
+      border-radius: 999px;
+      background: #e8edf5;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .audio::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 11px;
+      width: 58%;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #1db954, #5fd387);
+    }
+    .link {
+      text-align: right;
+      color: #11834a;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div>
+      <h1>Top 10 Tracks</h1>
+      <p class="lead">Preview music, inspect metadata, and push the final selection into the Verizon delivery flow.</p>
+    </div>
+    <div class="btn">Send to a Friend</div>
+  </div>
+  <div class="grid">
+    <div class="track">
+      <div class="cover"></div>
+      <div class="meta">
+        <h3>Blinding Lights</h3>
+        <p>Album: After Hours<br>Artists: The Weeknd</p>
+        <div class="audio"></div>
+        <div class="link">Open in Spotify</div>
+      </div>
+    </div>
+    <div class="track">
+      <div class="cover" style="background: linear-gradient(140deg, #cd040b, #f59f00);"></div>
+      <div class="meta">
+        <h3>Starboy</h3>
+        <p>Album: Starboy<br>Artists: The Weeknd, Daft Punk</p>
+        <div class="audio"></div>
+        <div class="link">Open in Spotify</div>
+      </div>
+    </div>
+    <div class="track">
+      <div class="cover" style="background: linear-gradient(140deg, #6f42c1, #1db954);"></div>
+      <div class="meta">
+        <h3>Save Your Tears</h3>
+        <p>Album: After Hours<br>Artists: The Weeknd</p>
+        <div class="audio"></div>
+        <div class="link">Open in Spotify</div>
+      </div>
+    </div>
+    <div class="track">
+      <div class="cover" style="background: linear-gradient(140deg, #1a73e8, #0f9d58);"></div>
+      <div class="meta">
+        <h3>Die For You</h3>
+        <p>Album: Starboy<br>Artists: The Weeknd</p>
+        <div class="audio"></div>
+        <div class="link">Open in Spotify</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
