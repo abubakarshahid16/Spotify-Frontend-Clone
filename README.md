@@ -2,6 +2,10 @@
 
 A Flask-based web application that connects the Spotify API with Verizon messaging workflows. The app allows a user to search for artists, view top tracks, preview music, and send a selected artist's top songs to a friend through a Verizon-integrated messaging flow.
 
+## Live Demo
+
+- GitHub Pages demo: <https://abubakarshahid16.github.io/Spotify-Frontend-Clone/>
+
 ## Visual Preview
 
 ![Spotify-Verizon home flow](docs/screenshots/home-preview.png)

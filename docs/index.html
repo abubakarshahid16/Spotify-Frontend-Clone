@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify-Verizon Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #111827 45%, #111827);
+      color: #e5eef8;
+    }
+    .hero {
+      padding: 72px 24px 48px;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(29,185,84,0.35), transparent 35%),
+                  radial-gradient(circle at top right, rgba(205,4,11,0.28), transparent 28%);
+    }
+    .hero h1 {
+      font-size: 50px;
+      margin: 0 0 14px;
+    }
+    .hero p {
+      max-width: 840px;
+      margin: 0 auto 28px;
+      color: #c6d3e3;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .btn-primary {
+      background: #1db954;
+      color: #04130a;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.09);
+      color: #f8fafc;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+    }
+    .section {
+      margin-top: 34px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .section h2 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #0b1220;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card .copy {
+      padding: 18px;
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+    .list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .pill {
+      background: #0b1220;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .pill strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #8cf3b5;
+    }
+    .footer {
+      margin-top: 26px;
+      color: #9fb1c7;
+      font-size: 14px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .grid, .list { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Spotify-Verizon Integration Demo</h1>
+    <p>A live portfolio preview of a Flask app that connects Spotify artist discovery and top-track browsing with a Verizon messaging delivery workflow.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="previews/home-preview.html">Open Home Demo</a>
+      <a class="btn btn-secondary" href="previews/tracks-preview.html">Open Tracks Demo</a>
+      <a class="btn btn-secondary" href="https://github.com/abubakarshahid16/Spotify-Frontend-Clone">View Repository</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>What This Demo Shows</h2>
+      <div class="list">
+        <div class="pill"><strong>Search Flow</strong>Artist lookup flow built around Spotify metadata and clean UI prompts.</div>
+        <div class="pill"><strong>Music Preview</strong>Top-track preview layout with album art, audio preview space, and external links.</div>
+        <div class="pill"><strong>Delivery Step</strong>Message-sending concept routed through a Verizon-connected device workflow.</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Interface Screens</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="screenshots/home-preview.png" alt="Spotify-Verizon home preview">
+          <div class="copy">
+            <h3>Artist Search View</h3>
+            <p>The landing flow centers on searching for an artist and understanding the three-step user journey from search to message delivery.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="screenshots/tracks-preview.png" alt="Spotify-Verizon tracks preview">
+          <div class="copy">
+            <h3>Top Tracks View</h3>
+            <p>The track screen highlights audio preview behavior, Spotify metadata, and the handoff into the Verizon message flow.</p>
+          </div>
+        </article>
+      </div>
+      <div class="footer">This static demo highlights the interface and flow. The full app requires API credentials for live Spotify and Verizon integration.</div>
+    </section>
+  </main>
+</body>
+</html>
