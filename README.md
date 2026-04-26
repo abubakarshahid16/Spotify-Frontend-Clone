@@ -1,113 +1,113 @@
-# Spotify-Verizon Integration: Send Top 10 Songs to a Friend
+# Spotify-Verizon Integration
 
-This Flask-based web application integrates the Spotify API and Verizon API to allow users to search for their favorite artists, view their top 10 songs, and send those songs to a friend's device using Verizon's messaging services.
+A Flask-based web application that connects the Spotify API with Verizon messaging workflows. The app allows a user to search for artists, view top tracks, preview music, and send a selected artist's top songs to a friend through a Verizon-integrated messaging flow.
 
-## Features
+## What This Project Does
 
-- **Spotify Integration**: Search for artists and retrieve their top 10 tracks
-- **Verizon Integration**: List available devices and send messages
-- **Modern UI**: Responsive design with Bootstrap 5
-- **Interactive Audio**: Preview songs directly in the browser (when available)
+The application is built around a simple user journey:
 
-## Prerequisites
+1. search for an artist
+2. inspect matching search results
+3. open the artist's top tracks
+4. preview tracks in the browser when previews are available
+5. choose a device from the Verizon side
+6. send the song list to a friend
 
-Before running the application, you'll need:
+This makes the project a good example of API orchestration across two different external services in a user-facing Flask app.
 
-1. Python 3.7 or higher
-2. A Spotify Developer account and API credentials
-3. Access to Verizon API Sandbox environment
+## Core Features
 
-## Setup Instructions
+- Spotify integration for artist search and top-track retrieval
+- Verizon integration for device discovery and message delivery
+- browser-based audio preview support when Spotify preview URLs are available
+- multi-step user flow across search, selection, preview, and delivery
+- Bootstrap-based responsive UI
 
-1. **Clone the repository**:
-   ```
-   git clone <repository-url>
-   cd spotify-verizon-app
-   ```
+## Tech Stack
 
-2. **Install dependencies**:
-   ```
-   pip install -r requirements.txt
-   ```
+- Backend: Flask
+- External APIs: Spotify API, Verizon API
+- Frontend: HTML templates, Bootstrap 5
+- Configuration: `.env`-based credentials
 
-3. **Configure environment variables**:
-   
-   Rename `.env.example` to `.env` and update the following variables:
-   
-   ```
-   # Spotify API Credentials
-   SPOTIFY_CLIENT_ID=your-spotify-client-id
-   SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
-   
-   # Verizon API Credentials
-   VERIZON_API_KEY=your-verizon-api-key
-   ```
+## Repository Contents
 
-4. **Run the application**:
-   ```
-   flask run
-   ```
+- `app.py`: main Flask application
+- `spotify_utils.py`: Spotify API helper logic
+- `verizon_utils.py`: Verizon integration helper logic
+- `index.html`, `search_results.html`, `top_tracks.html`, `devices.html`, `success.html`, `error.html`: UI templates
+- `.env.example`: sample environment configuration
+- `18.04.2025_21.41.52_REC.mp4`: local demo recording preserved in the repository
 
-5. **Access the application**:
-   
-   Open your browser and navigate to `http://127.0.0.1:5000`
+## Setup
 
-## Obtaining API Credentials
+### Prerequisites
 
-### Spotify API
+- Python 3.7+
+- Spotify Developer credentials
+- Verizon API sandbox access
 
-1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/)
-2. Log in with your Spotify account
-3. Create a new application
-4. Copy the Client ID and Client Secret to your `.env` file
+### Installation
 
-### Verizon API
+```bash
+git clone https://github.com/abubakarshahid16/Spotify-Frontend-Clone.git
+cd Spotify-Frontend-Clone
 
-1. Access the Verizon API Sandbox environment
-2. Register for API access
-3. Generate an API key
-4. Copy the API key to your `.env` file
-
-## Project Structure
-
+pip install -r requirements.txt
 ```
-spotify-verizon-app/
-├── app.py                 # Main Flask application
-├── requirements.txt       # Python dependencies
-├── .env                   # Environment variables (create from .env.example)
-├── README.md              # This file
-├── static/                # Static assets (CSS, JS, images)
-├── templates/             # HTML templates
-│   ├── base.html          # Base template with layout
-│   ├── index.html         # Home page
-│   ├── search_results.html # Artist search results
-│   ├── top_tracks.html    # Top tracks for an artist
-│   ├── devices.html       # Device selection
-│   └── success.html       # Success page
-└── utils/                 # Utility modules
-    ├── spotify_utils.py   # Spotify API integration
-    └── verizon_utils.py   # Verizon API integration
+
+### Environment Variables
+
+Create a `.env` file from `.env.example` and set:
+
+```text
+SPOTIFY_CLIENT_ID=your-spotify-client-id
+SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
+VERIZON_API_KEY=your-verizon-api-key
+```
+
+### Run
+
+```bash
+flask run
+```
+
+Open:
+
+```text
+http://127.0.0.1:5000
 ```
 
 ## Usage Flow
 
-1. Search for an artist on the home page
-2. Select an artist from the search results
-3. View the artist's top 10 tracks
-4. Click "Send to a Friend" to see available devices
-5. Select a device to send the tracks to
-6. View the success page when the message is sent
+1. search for an artist on the landing page
+2. select an artist from the results
+3. inspect the top 10 tracks
+4. choose to send the list
+5. select a Verizon-connected device
+6. confirm delivery
 
-## Development Mode
+## Development Note
 
-For testing without a valid Verizon API key, set `SIMULATE_VERIZON_SUCCESS=true` in your `.env` file to simulate successful message sending.
+For testing without a live Verizon key, set:
 
-## Submission Process
+```text
+SIMULATE_VERIZON_SUCCESS=true
+```
 
-For competition submission, prepare:
+This helps validate the end-to-end user flow during development.
 
-1. The completed project code in a ZIP file
-2. A completed feedback form
-3. A screenshot of successful compilation output
-4. A short video showcasing the working project
-5. Chat history and prompts (if your AI assistant allows it) 
+## Why This Project Matters
+
+This project is a useful portfolio piece because it demonstrates:
+
+- integration between multiple third-party APIs
+- stateful multi-page application flow
+- practical Flask application design
+- external credential handling
+- user-facing product thinking beyond a single endpoint demo
+
+## Author
+
+Abubakar Shahid  
+GitHub: <https://github.com/abubakarshahid16>
