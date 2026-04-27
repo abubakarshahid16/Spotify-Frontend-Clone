@@ -1,75 +1,69 @@
-# Spotify-Verizon Integration
+# Spotify Frontend Clone
 
-A Flask-based web application that connects the Spotify API with Verizon messaging workflows. The app allows a user to search for artists, view top tracks, preview music, and send a selected artist's top songs to a friend through a Verizon-integrated messaging flow.
+This repository currently contains a **Spotify-plus-Verizon integration demo**, not just a static Spotify UI clone.
 
-## Live Demo
+The repo name comes from the original presentation, but the actual project is a **Flask-based music discovery and message-sharing workflow** that connects Spotify search with Verizon messaging flows.
 
-- GitHub Pages demo: <https://abubakarshahid16.github.io/Spotify-Frontend-Clone/>
+## What problem this project solves
 
-## Visual Preview
+Music apps are good at discovery, but sharing content across external communication flows is usually disconnected. This project explores a simple product idea:
+
+- search for an artist
+- inspect top tracks
+- preview songs in the browser
+- send the selected track list through a Verizon-connected messaging flow
+
+Instead of stopping at “play music in the UI,” the project demonstrates **cross-service orchestration** between content discovery and delivery.
+
+## What this project does
+
+The application allows a user to:
+
+1. search for an artist with Spotify
+2. browse matching results
+3. open the artist's top tracks
+4. preview tracks when Spotify preview URLs are available
+5. select a Verizon-connected device
+6. send the track list to a friend
+
+## Why this project is interesting
+
+- It shows multi-step API orchestration instead of a one-page demo.
+- It combines third-party content APIs with messaging workflows.
+- It uses a real user journey rather than isolated endpoints.
+- It demonstrates how a Flask application can coordinate multiple external services cleanly.
+
+## Visual preview
 
 ![Spotify-Verizon home flow](docs/screenshots/home-preview.png)
 
 ![Spotify-Verizon top tracks flow](docs/screenshots/tracks-preview.png)
 
-## What This Project Does
-
-The application is built around a simple user journey:
-
-1. search for an artist
-2. inspect matching search results
-3. open the artist's top tracks
-4. preview tracks in the browser when previews are available
-5. choose a device from the Verizon side
-6. send the song list to a friend
-
-This makes the project a good example of API orchestration across two different external services in a user-facing Flask app.
-
-## Core Features
-
-- Spotify integration for artist search and top-track retrieval
-- Verizon integration for device discovery and message delivery
-- browser-based audio preview support when Spotify preview URLs are available
-- multi-step user flow across search, selection, preview, and delivery
-- Bootstrap-based responsive UI
-
-## Tech Stack
-
-- Backend: Flask
-- External APIs: Spotify API, Verizon API
-- Frontend: HTML templates, Bootstrap 5
-- Configuration: `.env`-based credentials
-
-## Repository Contents
+## Repository contents
 
 - `app.py`: main Flask application
 - `spotify_utils.py`: Spotify API helper logic
-- `verizon_utils.py`: Verizon integration helper logic
+- `verizon_utils.py`: Verizon API helper logic
 - `index.html`, `search_results.html`, `top_tracks.html`, `devices.html`, `success.html`, `error.html`: UI templates
 - `.env.example`: sample environment configuration
-- `18.04.2025_21.41.52_REC.mp4`: local demo recording preserved in the repository
-- `docs/screenshots/`: README preview images for the main user flow
+- `18.04.2025_21.41.52_REC.mp4`: local walkthrough recording
+
+## Tech stack
+
+- Backend: Flask
+- APIs: Spotify API, Verizon API
+- Frontend: HTML, Bootstrap 5, JavaScript
+- Config: `.env`-based credentials
 
 ## Setup
-
-### Prerequisites
-
-- Python 3.7+
-- Spotify Developer credentials
-- Verizon API sandbox access
-
-### Installation
 
 ```bash
 git clone https://github.com/abubakarshahid16/Spotify-Frontend-Clone.git
 cd Spotify-Frontend-Clone
-
 pip install -r requirements.txt
 ```
 
-### Environment Variables
-
-Create a `.env` file from `.env.example` and set:
+Create a `.env` file from `.env.example` and configure:
 
 ```text
 SPOTIFY_CLIENT_ID=your-spotify-client-id
@@ -77,53 +71,35 @@ SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
 VERIZON_API_KEY=your-verizon-api-key
 ```
 
-### Run
+Run locally:
 
 ```bash
 flask run
 ```
 
-Open:
+Then open:
 
 ```text
 http://127.0.0.1:5000
 ```
 
-## Usage Flow
+## Development note
 
-1. search for an artist on the landing page
-2. select an artist from the results
-3. inspect the top 10 tracks
-4. choose to send the list
-5. select a Verizon-connected device
-6. confirm delivery
-
-## Development Note
-
-For testing without a live Verizon key, set:
+For testing without a live Verizon key:
 
 ```text
 SIMULATE_VERIZON_SUCCESS=true
 ```
 
-This helps validate the end-to-end user flow during development.
+## Industrial positioning
 
-## Demo Asset
+A production-ready version of this idea would likely need:
 
-- Local walkthrough recording preserved in the repo:
-  - `18.04.2025_21.41.52_REC.mp4`
+- stronger auth and session handling
+- retries and error recovery for API failures
+- better state management across the multi-step flow
+- audit logging for outbound sharing actions
+- rate-limit awareness for external APIs
+- a cleaner mobile-friendly product interface
 
-## Why This Project Matters
-
-This project is a useful portfolio piece because it demonstrates:
-
-- integration between multiple third-party APIs
-- stateful multi-page application flow
-- practical Flask application design
-- external credential handling
-- user-facing product thinking beyond a single endpoint demo
-
-## Author
-
-Abubakar Shahid  
-GitHub: <https://github.com/abubakarshahid16>
+That makes this repo more than a clone exercise. It is best understood as a **cross-platform media-sharing workflow prototype**.
