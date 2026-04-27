@@ -1,4 +1,4 @@
-# Spotify Frontend Clone
+# Spotify Verizon Integration
 
 This repository currently contains a **Spotify-plus-Verizon integration demo**, not just a static Spotify UI clone.
 
@@ -58,8 +58,8 @@ The application allows a user to:
 ## Setup
 
 ```bash
-git clone https://github.com/abubakarshahid16/Spotify-Frontend-Clone.git
-cd Spotify-Frontend-Clone
+git clone https://github.com/abubakarshahid16/spotify-verizon-integration.git
+cd spotify-verizon-integration
 pip install -r requirements.txt
 ```
 
